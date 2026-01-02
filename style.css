@@ -1,13 +1,9 @@
-/* 
-    VARIABLES & RESET 
-    Apple HIG Color Palette & Spacing 
-*/
 :root {
-    --bg-color: #F5F5F7; /* Apple off-white */
+    --bg-color: #F5F5F7; 
     --card-bg: #FFFFFF;
     --text-primary: #1D1D1F;
     --text-secondary: #86868B;
-    --accent: #0071E3; /* Apple Blue */
+    --accent: #0071E3; 
     --radius: 18px;
     --spacing: 20px;
     --shadow-sm: 0 4px 12px rgba(0,0,0,0.06);
@@ -16,7 +12,7 @@
     --glass: rgba(255, 255, 255, 0.75);
 }
 
-/* Dark Mode Support */
+
 @media (prefers-color-scheme: dark) {
     :root {
         --bg-color: #000000;
@@ -47,18 +43,12 @@ img {
     object-fit: cover;
 }
 
-/* 
-   LAYOUT UTILITIES 
-*/
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing);
 }
 
-/* 
-   HEADER (Glassmorphism)
-*/
 .glass-header {
     position: sticky;
     top: 0;
@@ -88,9 +78,6 @@ nav a {
 
 nav a.active, nav a:hover { color: var(--accent); }
 
-/* 
-   SECTION 1: CAROUSEL 
-*/
 .carousel-section {
     padding-block: 20px;
     position: relative;
@@ -98,10 +85,9 @@ nav a.active, nav a:hover { color: var(--accent); }
 
 .carousel-wrapper {
     position: relative;
-    /* Allow buttons to sit over image */
+
 }
 
-/* Scroll Snap Container */
 .carousel-track {
     display: flex;
     overflow-x: auto;
@@ -110,14 +96,13 @@ nav a.active, nav a:hover { color: var(--accent); }
     gap: 16px;
     padding: 0 max(20px, calc((100vw - 1200px) / 2)); /* Center slides on wide screens */
     
-    /* Hide Scrollbar */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none;  /* IE */
+    scrollbar-width: none; 
+    -ms-overflow-style: none;  
 }
 .carousel-track::-webkit-scrollbar { display: none; }
 
 .slide {
-    flex: 0 0 90vw; /* Mobile: 90% width */
+    flex: 0 0 90vw; 
     height: 60vh;
     min-height: 400px;
     scroll-snap-align: center;
@@ -141,7 +126,6 @@ nav a.active, nav a:hover { color: var(--accent); }
     transition: transform 0.6s var(--transition-spring);
 }
 
-/* Image Scale Effect on Hover */
 .slide:hover img { transform: scale(1.03); }
 
 .slide-caption {
@@ -166,7 +150,7 @@ nav a.active, nav a:hover { color: var(--accent); }
     color: var(--text-secondary);
 }
 
-/* Carousel Buttons */
+
 .nav-btn {
     position: absolute;
     top: 50%;
@@ -183,10 +167,9 @@ nav a.active, nav a:hover { color: var(--accent); }
     align-items: center;
     justify-content: center;
     transition: opacity 0.3s, transform 0.2s;
-    opacity: 0; /* Hidden by default for touch-first feel */
+    opacity: 0;
 }
 
-/* Show buttons on hover (Desktop) */
 .carousel-wrapper:hover .nav-btn { opacity: 1; }
 .nav-btn:hover { transform: translateY(-50%) scale(1.1); }
 .nav-btn:active { transform: translateY(-50%) scale(0.95); }
@@ -194,9 +177,7 @@ nav a.active, nav a:hover { color: var(--accent); }
 .prev { left: 20px; }
 .next { right: 20px; }
 
-/* 
-   SECTION 2: GRID & CARDS 
-*/
+
 .grid-section { padding-block: 40px 80px; }
 .grid-section h3 {
     font-size: 1.8rem;
@@ -209,7 +190,6 @@ nav a.active, nav a:hover { color: var(--accent); }
     gap: 24px;
 }
 
-/* Card Structure */
 .card {
     background: var(--card-bg);
     border-radius: var(--radius);
@@ -220,7 +200,6 @@ nav a.active, nav a:hover { color: var(--accent); }
     position: relative;
 }
 
-/* Hover State */
 .card:hover {
     transform: translateY(-4px);
     box-shadow: var(--shadow-md);
